@@ -3,6 +3,7 @@ Hello future IT Developers!
 This is the repo which you'll clone and work on for the next week.
 
 Copy and run these commands to get the repo up and running on your machine.
+
 First, you clone and remove the remote uri to the remote repo.
 ```bash
 git clone https://github.com/JocimSus/oh26rec-template
@@ -18,7 +19,7 @@ After that, copy the uri of the newly made repo.
 
 After getting your own repo's url run these commands
 ```bash
-git remote add origin YOUR_REPOSITORY
+git remote add origin YOUR_REPOSITORY_URL
 git add .
 git commit -m "Level 0: Clone Repo"
 git push -u origin main 
