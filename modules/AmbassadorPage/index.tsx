@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Footer from "@/components/elements/Footer";
 import { Book, MessageCircle, Search, UserRound } from "lucide-react";
 import Image from "next/image";
 
@@ -511,6 +512,7 @@ export default function LandingPage() {
       <ArchiveSection />
       <FaqSection />
       <ContactPersonSection />
+      <Footer className="-mt-[44.663px] lg:mt-0" />
     </main>
   );
 }
