@@ -1,6 +1,12 @@
 "use client";
 
 import { Button as UiButton } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Book, Search, UserRound } from "lucide-react";
 import Image from "next/image";
 
@@ -8,6 +14,50 @@ const countdownBlocks = [
   { value: "03", label: "Days" },
   { value: "06", label: "Hours" },
   { value: "10", label: "Minutes" },
+];
+
+const ambassadorFaqs = [
+  {
+    value: "benefits",
+    question: "Apa aja benefit daftar Ambassador?",
+    answer:
+      "Sebagai Ambassador, kamu akan terlibat langsung dalam promosi OH Fasilkom, berkesempatan membangun relasi dengan teman-teman dari seluruh Indonesia, mendapatkan akses ke program eksklusif seperti webinar dan mentoring, serta memperluas wawasan seputar teknologi, bisnis digital, dan masa depan industri IT.",
+  },
+  {
+    value: "other-activities",
+    question: "Bagaimana jika aku memiliki kesibukan lain dan ingin mendaftar?",
+    answer:
+      "Tetap boleh mendaftar. Rangkaian kegiatan Ambassador akan diinformasikan lebih dahulu agar kamu bisa mengatur waktu dan menyelesaikan tanggung jawab dengan baik.",
+  },
+  {
+    value: "duration",
+    question: "Berapa lama program Ambassador ini berjalan?",
+    answer:
+      "Durasi dan jadwal lengkap program akan disampaikan pada guidebook serta kanal informasi resmi Open House Fasilkom UI.",
+  },
+  {
+    value: "editing",
+    question: "Harus bisa ngedit video gak kak??",
+    answer:
+      "Tidak harus. Kemampuan membuat atau mengedit konten menjadi nilai tambah, tetapi kamu tetap akan mendapat arahan selama program berlangsung.",
+  },
+  {
+    value: "outside-jabodetabek",
+    question: "Aku dari luar Jabodetabek, bisa ikut juga gak?",
+    answer:
+      "Bisa. Program Ambassador terbuka untuk pendaftar dari seluruh Indonesia selama memenuhi persyaratan yang berlaku.",
+  },
+  {
+    value: "fee",
+    question: "Apakah program ini berbayar?",
+    answer: "Tidak, pendaftaran program Ambassador tidak dipungut biaya.",
+  },
+  {
+    value: "popularity",
+    question: "Harus terkenal ya kak?",
+    answer:
+      "Tidak harus terkenal. Kami mencari peserta yang antusias, bertanggung jawab, dan tertarik memperkenalkan Open House Fasilkom UI kepada lebih banyak orang.",
+  },
 ];
 
 function CountdownBlock({ value, label }: { value: string; label: string }) {
@@ -267,6 +317,62 @@ function ArchiveSection() {
   );
 }
 
+function FaqSection() {
+  return (
+    <section className="relative h-[884px] w-[100dvw] max-w-[100dvw] shrink-0 text-white lg:h-[997.171px]">
+      <div className="relative ml-5 h-[884px] w-[345px] lg:top-[145.171px] lg:mx-auto lg:h-[852px] lg:w-[1204.671px]">
+        <header className="absolute top-16 left-0 flex w-full flex-col items-center text-center lg:top-20 lg:left-[37.335px] lg:w-[1130px]">
+          <h2 className="font-league-spartan text-[30px] leading-9 font-bold lg:text-[60px] lg:leading-[60px]">
+            Need More Help?
+          </h2>
+          <p className="mt-1 w-full text-[16px] leading-6 font-bold lg:mt-6 lg:text-[24px] lg:leading-9">
+            “Temukan berbagai pertanyaan serta jawaban seputar ambassador di
+            sini!”
+          </p>
+        </header>
+
+        <div className="absolute top-[184px] left-0 h-[636px] w-full lg:top-[260px] lg:flex lg:h-[512px] lg:items-start lg:justify-between">
+          <Accordion
+            className="w-full gap-4 lg:w-[737px]"
+            collapsible
+            defaultValue="benefits"
+            type="single"
+          >
+            {ambassadorFaqs.map((faq) => (
+              <AccordionItem
+                className="bg-primary-70 text-primary-10 data-open:border-primary-50 data-open:text-primary-70 data-open:hover:border-primary-50 rounded-xl border-2 border-transparent shadow-[4px_4px_12px_rgba(28,10,62,0.2)] hover:border-transparent data-open:bg-[#f3ecff]"
+                key={faq.value}
+                value={faq.value}
+              >
+                <AccordionTrigger className="font-league-spartan [&_[data-slot=accordion-trigger-icon]]:text-primary-10 [&[aria-expanded=true]_[data-slot=accordion-trigger-icon]]:text-primary-70 items-center px-4 py-[10px] text-[16px] leading-6 font-bold">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-5 text-[12px] leading-4 lg:text-[14px] lg:leading-5">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div
+            aria-hidden="true"
+            className="relative hidden h-[414px] w-[364.671px] lg:block"
+          >
+            <Image
+              alt=""
+              className="size-full object-contain"
+              draggable={false}
+              src="/design-system/panda-bingung.svg"
+              width={369}
+              height={438}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function LandingPage() {
   return (
     <main className="ambassador-page-background relative flex min-h-screen w-full flex-col items-center justify-start overflow-x-clip">
@@ -352,6 +458,7 @@ export default function LandingPage() {
       </div>
       <AboutSection />
       <ArchiveSection />
+      <FaqSection />
     </main>
   );
 }
