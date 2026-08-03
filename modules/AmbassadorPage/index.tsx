@@ -179,9 +179,97 @@ function AboutSection() {
   );
 }
 
+function ArchiveSection() {
+  return (
+    <section className="relative isolate h-[713.396px] w-[100dvw] max-w-[100dvw] shrink-0 overflow-visible text-white lg:h-[1039.829px]">
+      <div className="relative z-10 mx-auto h-full w-[359.115px] lg:w-[1221.224px]">
+        <h2 className="absolute top-16 left-0 w-full text-center [font-family:var(--font-league)] text-[24px] leading-8 font-bold lg:top-[120px] lg:text-[60px] lg:leading-[60px]">
+          Ambassador 2025’s Archive
+        </h2>
+
+        <div className="absolute top-32 left-0 h-[521.396px] w-full lg:top-60 lg:h-[719.829px]">
+          <div className="absolute top-[11px] left-[16px] z-40 h-[146px] w-[236px] lg:top-[153px] lg:left-[14px] lg:h-[317px] lg:w-[454px]">
+            <Image
+              alt="Welcoming Ambassador 2025 archive"
+              className="size-full object-contain"
+              draggable={false}
+              src="/design-system/welcoming-ambassador.png"
+              width={484}
+              height={300}
+            />
+          </div>
+
+          <div className="absolute top-[78px] left-[119px] z-20 h-[187px] w-[232px] lg:top-[89px] lg:left-[746px] lg:h-[376px] lg:w-[475px]">
+            <Image
+              alt="Webinar with Alumni archive"
+              className="size-full object-contain"
+              draggable={false}
+              src="/design-system/webinar-alumni.png"
+              width={472}
+              height={380}
+            />
+          </div>
+
+          <div className="absolute top-[177px] left-0 z-30 h-[264px] w-[205px] lg:top-[38px] lg:left-[407px] lg:h-[490px] lg:w-[384px]">
+            <Image
+              alt="Farewell Party archive"
+              className="size-full object-contain"
+              draggable={false}
+              src="/design-system/farewell.png"
+              width={371}
+              height={477}
+            />
+          </div>
+
+          <div className="absolute top-[260px] left-[159px] z-10 h-[161px] w-[229px] lg:top-[385px] lg:left-[560px] lg:h-[340px] lg:w-[451px]">
+            <Image
+              alt="Mentoring one-on-one archive"
+              className="size-full object-contain"
+              draggable={false}
+              src="/design-system/mentoring1o1.png"
+              width={474}
+              height={334}
+            />
+          </div>
+
+          <div className="absolute top-[362px] left-[63px] z-50 h-[162px] w-[214px] lg:top-[404px] lg:left-[165px] lg:h-[328px] lg:w-[420px]">
+            <Image
+              alt="RISTEK Class archive"
+              className="size-full object-contain"
+              draggable={false}
+              src="/design-system/ristek-class.png"
+              width={440}
+              height={333}
+            />
+          </div>
+        </div>
+      </div>
+
+      <Image
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute top-[524.624px] -left-[51.703px] z-20 h-[155.225px] w-[113.348px] max-w-none object-contain lg:top-[928px] lg:-left-[98px] lg:h-[431.179px] lg:w-[314.845px]"
+        draggable={false}
+        src="/design-system/shard-thin.svg"
+        width={315}
+        height={432}
+      />
+      <Image
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute top-[531px] -right-[32px] z-20 h-[130.836px] w-[87.781px] max-w-none object-contain lg:top-[922px] lg:-right-[98.93px] lg:h-[403.816px] lg:w-[270.93px]"
+        draggable={false}
+        src="/design-system/shard-thick.svg"
+        width={271}
+        height={404}
+      />
+    </section>
+  );
+}
+
 export default function LandingPage() {
   return (
-    <main className="relative flex min-h-screen w-full flex-col items-center justify-start overflow-hidden bg-linear-to-b from-[#040F27] from-[13.94%] via-[#0C265E] via-[52.4%] to-[#3F178D] bg-cover">
+    <main className="ambassador-page-background relative flex min-h-screen w-full flex-col items-center justify-start overflow-x-clip">
       <div className="pointer-events-none absolute -top-2.75 -left-27.5 z-0 h-243.75 w-[213.2px] md:-top-12.5 md:-left-43.75 md:h-278.25 md:w-133.25">
         <Image
           alt="Left pillar decoration"
@@ -263,6 +351,7 @@ export default function LandingPage() {
         </div>
       </div>
       <AboutSection />
+      <ArchiveSection />
     </main>
   );
 }

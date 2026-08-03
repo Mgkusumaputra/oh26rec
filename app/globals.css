@@ -257,4 +257,38 @@
   }
 }
 
+.ambassador-page-background {
+  background-color: #99b5f2;
+  background-image: linear-gradient(
+    to bottom,
+    #040f27 0,
+    #040f27 200.736px,
+    #0c265e 754.56px,
+    #3f178d 1440px,
+    #3f178d 2460px,
+    #551fbf 3070px,
+    #7976d0 3650px,
+    #99b5f2 4289px
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 4289px;
+}
+
+@media (min-width: 1024px) {
+  .ambassador-page-background {
+    background-image: linear-gradient(
+      to bottom,
+      #040f27 0,
+      #040f27 281.588px,
+      #0c265e 1058.48px,
+      #3f178d 2020px,
+      #3f178d 3100px,
+      #551fbf 3650px,
+      #7976d0 4300px,
+      #99b5f2 5061px
+    );
+    background-size: 100% 5061px;
+  }
+}
+
 /* ======================== SHADCN BUILT IN [END]========================= */
