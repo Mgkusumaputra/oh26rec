@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Book, Search, UserRound } from "lucide-react";
+import { Book, MessageCircle, Search, UserRound } from "lucide-react";
 import Image from "next/image";
 
 const countdownBlocks = [
@@ -373,6 +373,57 @@ function FaqSection() {
   );
 }
 
+function ContactPersonSection() {
+  return (
+    <section className="relative h-[545.663px] w-[100dvw] max-w-[100dvw] shrink-0 lg:h-[817px]">
+      <div className="relative ml-[19px] h-[545.663px] w-[346px] lg:top-[41px] lg:ml-[126px] lg:h-[776px] lg:w-[1178px]">
+        <header className="text-primary-70 absolute top-16 left-0 flex w-full flex-col items-center text-center lg:top-20">
+          <h2 className="font-league-spartan text-[30px] leading-9 font-bold lg:text-[60px] lg:leading-[60px]">
+            <span className="lg:hidden">
+              Butuh bantuan atau pertanyaan lain?
+            </span>
+            <span className="hidden lg:inline">
+              Butuh bantuan atau punya pertanyaan lain?
+            </span>
+          </h2>
+          <p className="mt-1 text-[16px] leading-6 font-bold lg:mt-6 lg:text-[24px] lg:leading-9">
+            Kamu dapat hubungi kontak di bawah ini untuk informasi lebih lanjut
+            ya!
+          </p>
+        </header>
+
+        <Image
+          alt="Ambassador contact person mascot"
+          className="absolute top-[236px] left-[2.751px] h-[155.663px] w-[340.498px] max-w-none lg:top-[264px] lg:left-[248.5px] lg:h-[311.326px] lg:w-[681px]"
+          draggable={false}
+          src="/design-system/panda-contact.svg"
+          width={341}
+          height={162}
+        />
+
+        <div className="absolute top-[439.663px] left-0 flex h-[42px] w-full gap-4 lg:top-[648px] lg:left-[381px] lg:h-12 lg:w-[416px]">
+          <UiButton
+            className="bg-primary-70 h-[42px] w-[165px] min-w-0 gap-2 rounded-lg px-3 text-[12px] leading-4 text-white lg:h-12 lg:w-[200px] lg:rounded-xl lg:text-[14px] lg:leading-5 [&_svg]:size-4 lg:[&_svg]:size-[18px]"
+            type="button"
+            variant="primary"
+          >
+            <MessageCircle />
+            Contact Person
+          </UiButton>
+          <UiButton
+            className="bg-primary-70 h-[42px] w-[165px] min-w-0 gap-2 rounded-lg px-3 text-[12px] leading-4 text-white lg:h-12 lg:w-[200px] lg:rounded-xl lg:text-[14px] lg:leading-5 [&_svg]:size-4 lg:[&_svg]:size-[18px]"
+            type="button"
+            variant="primary"
+          >
+            <MessageCircle />
+            Contact Person
+          </UiButton>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function LandingPage() {
   return (
     <main className="ambassador-page-background relative flex min-h-screen w-full flex-col items-center justify-start overflow-x-clip">
@@ -459,6 +510,7 @@ export default function LandingPage() {
       <AboutSection />
       <ArchiveSection />
       <FaqSection />
+      <ContactPersonSection />
     </main>
   );
 }
