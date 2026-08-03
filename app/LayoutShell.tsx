@@ -24,6 +24,7 @@ export default function LayoutShell({
       ?.className ?? "bg-transparent";
 
   const isNotFoundPage = pathname.startsWith("/not-found");
+  const isAmbassadorPage = pathname.startsWith("/ambassador");
 
   return (
     <>
@@ -33,7 +34,7 @@ export default function LayoutShell({
         <Navbar />
         <div
           className={`${pageSurfaceClass} ${
-            isNotFoundPage ? "pt-0" : "pt-20 lg:pt-24"
+            isNotFoundPage || isAmbassadorPage ? "pt-0" : "pt-20 lg:pt-24"
           } layout w-full`}
         >
           {children}

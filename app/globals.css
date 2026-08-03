@@ -274,7 +274,32 @@
   background-size: 100% 4289px;
 }
 
-@media (min-width: 1024px) {
+/* Keep the 390px composition centered on intermediate viewports. */
+.ambassador-mobile-frame {
+  margin-left: max(20px, calc((100vw - 390px) / 2 + 20px));
+}
+
+.ambassador-mobile-frame-19 {
+  margin-left: max(19px, calc((100vw - 390px) / 2 + 19px));
+}
+
+.ambassador-mobile-decoration,
+.ambassador-footer-glow {
+  margin-left: max(0px, calc((100vw - 390px) / 2));
+}
+
+@media (min-width: 1280px) {
+  .ambassador-mobile-frame,
+  .ambassador-mobile-frame-19 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .ambassador-mobile-decoration,
+  .ambassador-footer-glow {
+    margin-left: 0;
+  }
+
   .ambassador-page-background {
     background-image: linear-gradient(
       to bottom,
